@@ -1,0 +1,30 @@
+@mixin for-desktop {
+    @media  (min-width: 991px) {
+        @content;
+    }
+}
+
+@mixin for-tablet {
+    @media  (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin for-mobile-up {
+    @media  (min-width: 512px) {
+        @content;
+    }
+}
+
+
+@mixin for-mobile {
+    @media (max-width: 512px) {
+        @content;
+    }
+}
+
+@mixin clear-after {
+   &::after{
+       content: ''; display: block; clear: both;
+   }
+}

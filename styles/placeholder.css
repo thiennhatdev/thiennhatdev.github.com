@@ -1,0 +1,27 @@
+.ph-heading {
+	width: 60%;
+	height: 2.2em;
+	background: #ededed;
+	margin: 1em 0;
+}
+.ph-b {
+	height: 35px;
+	display: block;
+	max-width: 100px;
+	background: #ededed;
+	margin-bottom: 0px;
+	border-radius: 5px;
+}
+.ph-p {
+	height: 5em;
+	display: block;
+	margin-bottom: 1.5em;
+	background: #ededed;
+}
+
+.ph-p.x2 {
+	height: 12em;
+}
+.ph-p.x3 {
+	height: 18em;
+}

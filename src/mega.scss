@@ -1,0 +1,307 @@
+@import "mixins";
+@import "animations";
+
+// Start mega menu here
+
+body {
+    overflow-x: hidden;
+}
+
+$mega-bg: #fff;
+$mega-border-width: 1px;
+$mega-border-color: #f0f0f0;
+$mega-arr-size: 16px;
+$arr-border-pd: $mega-arr-size / 2;
+
+//--------------------------------//
+//----- NAV LI ITEMS -------------//
+//--------------------------------//
+.mega-desktop {
+    .mega-enabled {
+        position: relative;
+        &:hover,
+        &.mega-active {
+            .mega-clip {
+                display: block;
+                z-index: 300;
+            }
+        }
+    }
+
+    .mega-clip {
+        position: absolute;
+        background: transparent;
+        display: none;
+        opacity: 0;
+    }
+
+    &.mega-mod-horizontal {
+        .mega-clip {
+            width: 450px;
+            height: 160px;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            clip-path: polygon(0 40%, 50% 0%, 100% 40%);
+        }
+    }
+    &.mega-mod-vertical {
+        .mega-clip {
+            width: 450px;
+            height: 160px;
+            top: 40%;
+            left: 60%;
+            //display: no;
+            transform: translateY(-50%);
+            clip-path: polygon(0 50%, 50% 0%, 50% 100%);
+        }
+        .mega-v-right {
+            .mega-clip {
+                top: 40%;
+                left: -130%;
+                //display: no;
+                transform: translateY(-50%);
+                clip-path: polygon(50% 0%, 100% 50%, 50% 100%);
+            }
+        }
+    }
+}
+
+//--------------------------------//
+//--- MEGA DESKTOP & MOBILE ------//
+//--------------------------------//
+.mega-desktop .mega-header-auto {
+    display: none !important;
+}
+
+.mega-wrapper {
+    position: absolute;
+    z-index: 20;
+    border: 0px none;
+    visibility: hidden;
+    &.mega-active {
+        z-index: 9990;
+    }
+    .mega-inner {
+        //background: $mega-bg;
+        width: 100%;
+        min-height: 100%;
+        display: block;
+    }
+}
+.mega-drop {
+    position: fixed;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+    transition: all linear 0.3s;
+    opacity: 0;
+    &.drop-activated {
+        visibility: visible;
+        transform: scale(1);
+        z-index: 590;
+        opacity: 1;
+    }
+}
+.mega-mobile-activated {
+    overflow: hidden;
+}
+
+//--------------------------------//
+//----- MEGA DESKTOP  ONLY -------//
+//--------------------------------//
+
+.mega-wrapper.mega-desktop {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    //border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+    &.mega-fixed {
+        position: fixed;
+    }
+    .mega-inner {
+        padding: 1.5em;
+        display: block;
+        &.no-pd {
+            padding: 0px;
+        }
+    }
+
+    // box-shadow: 0 50px 100px -20px rgba(50,50,93,.41);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: $mega-border-width solid $mega-border-color;
+    background: $mega-bg;
+
+    &.mega-active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .mega-header {
+        display: none;
+    }
+
+    &.no-animate {
+        transition: none !important;
+    }
+
+    .mega-arr {
+        position: absolute;
+        top: -($mega-arr-size / 2 - $mega-border-width);
+        left: 0px;
+        width: $mega-arr-size;
+        height: $mega-arr-size / 2;
+        filter: drop-shadow(0px (-$mega-border-width) 0px $mega-border-color);
+        display: block;
+        z-index: 10;
+        opacity: 1;
+        .mega-arr-inner {
+            content: "";
+            display: block;
+            width: $mega-arr-size;
+            height: $mega-arr-size / 2;
+            top: 0px;
+            left: 0px;
+            background: $mega-bg;
+            clip-path: polygon(0 90%, 50% 0%, 100% 90%);
+        }
+
+        &.arr-left {
+            top: 5px;
+            left: -($mega-arr-size / 2 - $mega-border-width);
+            filter: drop-shadow(
+                (-$mega-border-width) 0px 0px $mega-border-color
+            );
+            .mega-arr-inner {
+                height: $mega-arr-size;
+                width: $mega-arr-size / 2;
+                top: 0px;
+                left: 0px;
+                clip-path: polygon(0 50%, 100% 0%, 100% 100%);
+            }
+        }
+
+        &.arr-right {
+            top: 5px;
+            left: auto;
+            right: -($mega-arr-size - $mega-border-width);
+            filter: drop-shadow(
+                ($mega-border-width) 0px 0px $mega-border-color
+            );
+            .mega-arr-inner {
+                height: $mega-arr-size;
+                width: $mega-arr-size / 2;
+                top: 0px;
+                left: 0px;
+                clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+            }
+        }
+    }
+
+    &.mega-vertical {
+        &.mi-0 {
+        }
+    }
+}
+.mega-desktop-activated {
+    &.mega-body-fixed {
+        overflow: hidden !important;
+    }
+}
+
+//--------------------------------//
+//----- MEGA MOBILE ONLY ---------//
+//--------------------------------//
+
+.mega-mobile {
+    .mega-enabled {
+        &::before {
+            display: none !important;
+        }
+    }
+    .mega-header {
+        position: sticky;
+        border-bottom: 1px solid #dddddd;
+        height: 45px;
+        display: flex;
+        top: 0px;
+        background: #fff; 
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 15px;
+        z-index: 35;
+
+        .mega-close {
+            margin-left: auto;
+            width: 1.5em;
+            height: 1.5em;
+            display: flex;
+            z-index: 32;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.mega-wrapper {
+    .mega-close {
+        display: none;
+    }
+} 
+
+.mega-wrapper.mega-mobile {
+    position: fixed;
+    max-height: calc(100% - 2.5em);
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    transform: translateY(100%);
+
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    top: auto;
+    display: block;
+
+    transition: all linear 0.3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    overflow: auto;
+    border: 0px none;
+    z-index: 9910;
+    .mega-arr {
+        display: none;
+    }
+    &.mega-active {
+        visibility: visible;
+        transform: translateX(0);
+        // .mega-close {
+        //     display: block;
+        // }
+    }
+    .mega-inner {
+        padding: 15px;
+        margin-top: 0;
+        height: 100%;
+        max-height: 100%;
+        overflow: auto;
+        position: relative;
+        z-index: 15;
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+}

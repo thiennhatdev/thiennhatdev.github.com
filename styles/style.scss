@@ -1,0 +1,133 @@
+@import "../src/variables";
+@import "../src/mixins";
+@import "reset";
+@import "layout";
+
+@import "menu-horizontal";
+@import "menu-vertical";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    &:hover {
+        color: $link-active-color;
+    }
+}
+
+#page {
+    margin-top: 0px;
+    display: block;
+}
+#header {
+    position: initial;
+    width: 100%;
+    top: 0px;
+    z-index: 399;
+    background: transparent;
+    //box-shadow: inset rgba(0, 0, 0, 0.1) 0 -1px 0;
+    padding: 1em 0;
+}
+.header-nav {
+    a {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    li:hover {
+        a {
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+}
+
+.mega-mobile-toggle {
+    color: rgba(255, 255, 255, 1);
+    svg {
+        fill: currentColor;
+    }
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    .logo {
+        max-height: 45px;
+        width: auto;
+        flex-basis: 45px;
+    }
+    .nav-menu-wrapper {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+#logo {
+    max-height: 35px;
+    width: auto;
+    flex-basis: 35px;
+}
+
+.sticky {
+    position: sticky;
+    top: 0px;
+}
+
+.mega-wrapper.mega-desktop {
+    border-radius: 10px;
+    &[data-width="full"] {
+        border-radius: 0;
+    }
+    .no-pd {
+        .mega-sub {
+            li {
+                &:first-child a {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+                &:last-child a {
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+    }
+}
+
+@include for-desktop() {
+    .mega-mobile-toggle {
+        display: none;
+    }
+}
+
+@include for-tablet() {
+    .mega-mobile-toggle {
+        display: flex;
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
+/* --------------------------------- */
+/* -------- DEMO CONTENT ----------- */
+/* --------------------------------- */
+
+.section-header {
+    background: #37384e;
+    height: 780px;
+    display: block;
+}
+.section-footer {
+    background: #888888;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.main-content .mgr {
+    position: relative;
+}
