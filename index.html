@@ -1,636 +1,325 @@
-<html lang="en">
-
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MegaMenu Js</title>
+  <title>love you</title>
+  <style>
+	html,body{
+  margin:0px;
+  height:100%;
+}
+.bg_heart{
+  position:relative;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+ overflow:hidden;
+  background-image:url("https://i.pinimg.com/originals/51/d8/37/51d8374126446d495348b6032202126f.jpg");
+  background-size:100% 100%;
+  z-index:-1;
+}
 
-	<link rel='stylesheet' href='./styles/style.css' media='all' />
-	<link rel='stylesheet' href='./src/mega.css' media='all' />
-	<link rel='stylesheet' href='./src/mega-content.css' media='all' />
-	<link href="./styles/placeholder.css" rel="stylesheet">
+.container{
+	padding: 5rem;
+	box-sizing: border-box;
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  text-align:center;
+  color:white;
+  font-family:cursive;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+
+.heart{
+  position:absolute;
+  top:-50%;
+  transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  -m-transform:rotate(-45deg);
+}
+.heart:before{
+  position:absolute;
+  top:-50%;
+  left:0;
+  display:block;
+  content:"";
+  width:100%;
+  height:100%;
+  background:inherit;
+  border-radius:100%;
+}
+.heart:after{
+  position:absolute;
+  top:0;
+  right:-50%;
+  display:block;
+  content:"";
+  width:100%;
+  height:100%;
+  background:inherit;
+  border-radius:100%;
+}
+
+#text1 {
+	font-size: 70px;
+}
+
+@keyframes love {
+  0%{top:110%}
+}
+@-webkit-keyframes love {
+  0%{top:110%}
+}
+@-moz-keyframes love {
+  0%{top:110%}
+}
+@-ms-keyframes love {
+  0%{top:110%}
+}
+  </style>
+  <script src="./jquery.js"></script>
 </head>
-
 <body>
-
-	<div id="page">
-
-		<section class="section-header">
-			<div id="header">
-				<div class="container-fluid header-inner">
-					<div class="logo">
-						<img id="logo" src="./images/burger.svg">
-					</div>
-
-					<a class="mega-mobile-toggle" data-target="#nav-menu-primary" href="#">
-						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 20 20">
-							<path  d="M17.5 6h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path>
-							<path  d="M17.5 11h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path>
-							<path  d="M17.5 16h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path>
-						</svg>
-
-					</a>
-
-					<div id="nav-menu-primary" class="nav-menu-wrapper">
-						<ul id="nav-1" class="nav-menu header-nav">
-							<li id="item-1" data-mega="#mega-header-home">
-								<a href="#home">Home</a>
-							</li>
-							<li data-mega="#mega-header-shop">
-								<a href="#electronics">Shop</a>
-							</li>
-							<li data-mega="#mega-header-full">
-								<a href="#2">Full Width</a>
-							</li>
-							<li data-mega="#mega-header-standard">
-								<a href="#2">Standard</a>
-							</li>
-							<li data-mega="#mega-header-services">
-								<a href="#3">Services</a>
-							</li>
-							<li data-mega="#mega-header-contact">
-								<a href="#4">Contact</a>
-							</li>
-						</ul>
-					</div>
-
-
-				</div>
-			</div>
-		</section>
-
-
-		<div id="mega-header-home" class="mega-wrapper" data-align="center" data-animation="up" data-m-animation="slide-right">
-			<div class="mega-inner">
-
-
-				<div class="mgr">
-					<div class="mgc-2 mgc-md-3 mgc-sm-12">
-						<h3 class="mgh-3">Movies & TV Shows</h3>
-						<ul>
-							<li><a href="#">New Release Movies</a></li>
-							<li><a href="#">Shop By Format</a></li>
-							<li><a href="#">Shop by Genre</a></li>
-							<li><a href="#">Shop by Price</a></li>
-							<li><a href="#">Shop by Studio</a></li>
-							<li><a href="#">InstaWatch Movies by Vudu</a></li>
-							<li><a href="#">TV Shows</a></li>
-							<li><a href="#">Complete Series & Box Sets</a></li>
-						</ul>
-					</div><!-- ./mgc" -->
-
-					<div class="mgc-2  mgc-md-3 mgc-sm-12">
-						<h3 class="mgh-3">Digital Video</h3>
-						<ul>
-							<li><a href="#">Free Movies & TV</a></li>
-							<li><a href="#">Digital Rentals</a></li>
-							<li><a href="#">Digital Deals</a></li>
-							<li><a href="#">Digital TV Shows</a></li>
-						</ul>
-					</div><!-- ./mgc" -->
-
-					<div class="mgc-3 mgc-md-3 mgc-sm-12">
-						<h3 class="mgh-3">Music</h3>
-						<ul>
-							<li><a href="#">New Releases</a></li>
-							<li><a href="#">Vinyl Records</a></li>
-							<li><a href="#">CDs</a></li>
-							<li><a href="#">Music Gift Cards</a></li>
-						</ul>
-						<h3 class="mgh-3">Musical Instruments</h3>
-						<ul>
-							<li><a href="#">Guitars</a></li>
-							<li><a href="#">Keyboards</a></li>
-							<li><a href="#">Brass & Wind Instruments</a></li>
-							<li><a href="#">Ukulele</a></li>
-						</ul>
-					</div><!-- ./mgc" -->
-
-					<div class="mgc-3 mgc-md-3 mgc-sm-12">
-						<h3 class="mgh-3">Books</h3>
-						<ul>
-							<li><a href="#">Children's Books</a></li>
-							<li><a href="#">Textbooks</a></li>
-							<li><a href="#">eBooks</a></li>
-							<li><a href="#">eBook Deals</a></li>
-							<li><a href="#">Audiobooks</a></li>
-						</ul>
-					</div><!-- ./mgc" -->
-
-					<div class="mgc-2 mgc-md-3 mgc-sm-12">
-						<h3 class="mgh-3">Custom Code</h3>
-						<p>You can put any HTML code here.</p>
-					</div><!-- ./mgc-2" -->
-
-
-
-
-				</div><!-- ./mgr" -->
-
-
-			</div><!-- /.mega-inner -->
-		</div><!-- /.mega-wrapper#mega-header-home -->
-
-
-		<div id="mega-header-shop" class="mega-wrapper" data-align="left" data-width="full" data-animation="up" data-m-animation="slide-right">
-
-			<div class="mega-inner">
-
-				<div class="container">
-
-					<div class="mgr">
-						<div class="mgc-3 mgc-md-6 mgc-sm-12">
-							<h3 class="mgh-3">New Products</h3>
-							<ul class="ul-thumb product_list_widget">
-								<li>
-									<a href="#">
-										<img width="400" height="400" src="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-400x400.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-400x400.jpg 400w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-300x300.jpg 300w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-150x150.jpg 150w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-768x768.jpg 768w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-600x600.jpg 600w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-510x510.jpg 510w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-100x100.jpg 100w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8.jpg 1000w" sizes="(max-width: 400px) 100vw, 400px"> <span class="product-title">Woo Single #2</span>
-									</a>
-									<del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>3.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>2.00</span></ins>
-								</li>
-								<li>
-									<a href="#">
-										<img width="400" height="400" src="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-400x400.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-400x400.jpg 400w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-300x300.jpg 300w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-150x150.jpg 150w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-768x768.jpg 768w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-600x600.jpg 600w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-510x510.jpg 510w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-100x100.jpg 100w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6.jpg 1000w" sizes="(max-width: 400px) 100vw, 400px"> <span class="product-title">Woo Album #4</span>
-									</a>
-									<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>9.00</span>
-								</li>
-								<li>
-									<a href="#">
-										<img width="400" height="400" src="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-400x400.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-400x400.jpg 400w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-300x300.jpg 300w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-150x150.jpg 150w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-768x768.jpg 768w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-600x600.jpg 600w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-510x510.jpg 510w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-100x100.jpg 100w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7.jpg 1000w" sizes="(max-width: 400px) 100vw, 400px"> <span class="product-title">Woo Single #1</span>
-									</a>
-									<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>3.00</span>
-								</li>
-							</ul>
-						</div><!-- /.mgc-3 -->
-
-
-						<div class="mgc-3 mgc-md-6 mgc-sm-12">
-							<h3 class="mgh-3">Top Rated Products</h3>
-							<ul class="ul-thumb product_list_widget">
-								<li>
-									<a href="#">
-										<img width="400" height="400" src="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-400x400.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-400x400.jpg 400w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-300x300.jpg 300w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-150x150.jpg 150w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-768x768.jpg 768w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-600x600.jpg 600w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-510x510.jpg 510w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8-100x100.jpg 100w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/8.jpg 1000w" sizes="(max-width: 400px) 100vw, 400px"> <span class="product-title">Woo Single #2</span>
-									</a>
-									<del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>3.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>2.00</span></ins>
-								</li>
-								<li>
-									<a href="#">
-										<img width="400" height="400" src="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-400x400.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-400x400.jpg 400w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-300x300.jpg 300w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-150x150.jpg 150w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-768x768.jpg 768w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-600x600.jpg 600w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-510x510.jpg 510w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6-100x100.jpg 100w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/6.jpg 1000w" sizes="(max-width: 400px) 100vw, 400px"> <span class="product-title">Woo Album #4</span>
-									</a>
-									<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>9.00</span>
-								</li>
-								<li>
-									<a href="#">
-										<img width="400" height="400" src="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-400x400.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" srcset="https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-400x400.jpg 400w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-300x300.jpg 300w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-150x150.jpg 150w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-768x768.jpg 768w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-600x600.jpg 600w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-510x510.jpg 510w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7-100x100.jpg 100w, https://demo.themeum.com/wordpress/wp-megamenu/wp-content/uploads/2013/06/7.jpg 1000w" sizes="(max-width: 400px) 100vw, 400px"> <span class="product-title">Woo Single #1</span>
-									</a>
-									<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>3.00</span>
-								</li>
-							</ul>
-						</div><!-- /.mgc-3 -->
-
-						<div class="mgc-3  mgc-md-6 mgc-sm-12">
-							<h3 class="mgh-3">Categories</h3>
-							<ul>
-								<li><a href="#">New Arrivals</a></li>
-								<li><a href="#">Best Sellers</a></li>
-								<li><a href="#">Clothing</a></li>
-								<li><a href="#">Bras, Panties & Lingerie</a></li>
-								<li><a href="#">Accessories</a></li>
-								<li><a href="#">Handbags</a></li>
-								<li><a href="#">View all</a></li>
-							</ul>
-
-						</div><!-- /.mgc -->
-					</div><!-- /.mgr -->
-
-				</div><!-- /.container -->
-
-			</div><!-- /.mega-inner -->
-		</div><!-- /#mega-header-top -->
-
-		<div id="mega-header-standard" class="mega-wrapper" data-animation="up" data-m-animation="slide-up">
-
-			<div class="mega-inner no-pd">
-				<ul class="mega-sub">
-					<li><a href="#">New Arrivals</a></li>
-					<li><a href="#">Best Sellers</a></li>
-					<li><a href="#">Clothing</a></li>
-					<li><a href="#">Bras, Panties & Lingerie</a></li>
-					<li><a href="#">Accessories</a></li>
-					<li><a href="#">Handbags</a></li>
-					<li><a href="#">View all</a></li>
-				</ul>
-			</div><!-- ./mega-inner -->
-		</div><!-- .mega-wrapper -->
-
-		<div id="mega-header-full" class="mega-wrapper" data-align="left" data-inner-align="auto" data-width="full" data-animation="up" data-m-animation="slide-right">
-
-			<div class="mega-inner">
-
-
-				<div class="mgr-fluid">
-
-					<div class="mgc-3 mgc-md-6">
-						<h3 class="mgh-3">Full Responsive</h3>
-						<ul>
-							<li><a href="#">Mobile Fast</a></li>
-							<li><a href="#">Flexible Design</a></li>
-							<li><a href="#">Tabbed Submenu</a></li>
-							<li><a href="#">Unique Layout</a></li>
-						</ul>
-					</div><!-- /.mgc -->
-
-					<div class="mgc-3 mgc-md-6">
-						<h3 class="mgh-3">Getting Started</h3>
-						<ul>
-							<li><a href="#">Plugin Activation</a></li>
-							<li><a href="#">Horizontal Menus </a></li>
-							<li><a href="#">Submenu Layouts </a></li>
-							<li><a href="#">Rapidly Develop Mega</a></li>
-						</ul>
-					</div><!-- /.mgc -->
-
-					<div class="mgc-2 mgc-md-4">
-						<h3 class="mgh-3">Company</h3>
-						<ul>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Licenses</a></li>
-							<li><a href="#">Market API</a></li>
-							<li><a href="#">Licenses</a></li>
-
-						</ul>
-					</div><!-- /.mgc -->
-
-					<div class="mgc-2 mgc-md-4">
-						<h3 class="mgh-3">Services</h3>
-						<ul>
-							<li><a class="cs-widget-link" href="#">Strategy</a></li>
-							<li><a class="cs-widget-link" href="#">HR &amp; Talent</a></li>
-							<li><a class="cs-widget-link" href="#">Training</a></li>
-							<li><a class="cs-widget-link" href="#">Analytics</a></li>
-							<li><a class="cs-widget-link" href="#">Sales &amp; Marketing</a></li>
-						</ul>
-					</div><!-- /.mgc -->
-
-					<div class="mgc-2 mgc-md-4">
-						<h3 class="mgh-3">Our news</h3>
-						<ul>
-							<li><a class="cs-widget-link" href="#">Latest news</a></li>
-							<li><a class="cs-widget-link" href="#">Insights</a></li>
-							<li><a class="cs-widget-link" href="#">Campaigns</a></li>
-							<li><a class="cs-widget-link" href="#">Events</a></li>
-						</ul>
-					</div><!-- /.mgc -->
-
-
-
-
-				</div><!-- /.mgr-fluid -->
-
-
-			</div><!-- ./mega-inner -->
-		</div><!-- .mega-wrapper -->
-
-		<div id="mega-header-services" class="mega-wrapper" data-animation="up" data-width="600px" data-m-animation="slide-right">
-
-			<div class="mega-inner">
-
-				<ul class="mega-ls-icon ls-2">
-
-					<li>
-						<a class=" item-1" href="#">
-							<img src="./demos/icons/SVG/home.svg" />
-							<h3>Service #1</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-2" href="#">
-							<img src="./demos/icons/SVG/apartment.svg" />
-							<h3>Service #2</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-3" href="#">
-							<img src="./demos/icons/SVG/pencil.svg" />
-							<h3>Service #3</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-4" href="#">
-							<img src="./demos/icons/SVG/database.svg" />
-							<h3>Service #4</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-5" href="#">
-							<img src="./demos/icons/SVG/printer.svg" />
-							<h3>Service #5</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-6" href="#">
-							<img src="./demos/icons/SVG/camera.svg" />
-							<h3>Service #6</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-7" href="#">
-							<img src="./demos/icons/SVG/book.svg" />
-							<h3>Service #7</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-8" href="#">
-							<img src="./demos/icons/SVG/store.svg" />
-							<h3>Service #8</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-9" href="#">
-							<img src="./demos/icons/SVG/laptop.svg" />
-							<h3>Service #9</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-10" href="#">
-							<img src="./demos/icons/SVG/gift.svg" />
-							<h3>Service #10</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-11" href="#">
-							<img src="./demos/icons/SVG/pie-chart.svg" />
-							<h3>Service #11</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-					<li>
-						<a class=" item-12" href="#">
-							<img src="./demos/icons/SVG/camera-video.svg" />
-							<h3>Service #12</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-				</ul>
-
-
-
-			</div><!-- /.mega-inner -->
-		</div><!-- /.mega-wrapper -->
-
-		<div id="mega-header-contact" class="mega-wrapper" data-width="900px" data-align="" data-animation="up" data-m-animation="slide-right">
-			<div class="mega-inner">
-				<div class="mgr">
-					<div class="mgc-6 mgc-sm-12">
-						<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4665.490360862113!2d-122.35171403654202!3d47.62761527347546!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdb2ba8689ed0920d!2sSpace%20Needle!5e0!3m2!1sen!2sus!4v1592325404845!5m2!1sen!2sus" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
-					</div>
-					<div class="mgc-6 mgc-sm-12">
-						<form class="mgb" action="#">
-							<h3>Contact Us</h3>
-							<div class="mgi-g">
-								<input type="text" class="mgi-text" placeholder="Your name">
-							</div>
-							<div class="mgi-g">
-								<input type="text" class="mgi-text" placeholder="Your email">
-							</div>
-							<div class="mgi-g">
-								<textarea class="mgi-text" rows="5" placeholder="Your message"></textarea>
-							</div>
-							<input class="mgi-button" type="submit" value="Send">
-						</form>
-						<div class="mgb">
-							<h3>Address</h3>
-							<p>1600 Amphitheatre Parkway in Mountain View, California, United States.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
-		<div class="container-fluid  main-content" id="main-content">
-
-			<div class="mgr">
-
-
-				<div class="mgc-6 mgc-sm-12 container-inner mgo-3" id="container-inner-bottom">
-
-					<h2 class="ph-heading"></h2>
-					<p class="ph-p"></p>
-					<p class="ph-p x2"></p>
-					<p class="ph-p x3"></p>
-					<p class="ph-p"></p>
-					<p class="ph-p"></p>
-					<p class="ph-p"></p>
-					<p class="ph-p"></p>
-					<p class="ph-p"></p>
-					<p class="ph-p"></p>
-
-				</div>
-
-
-				<div class="mgc-3 mgc-sm-12 sticky mgo-1">
-					<div id="vertical-left" class="menu-vertical-wrapper">
-						<div class="mega-nav-header mega-header"><span class="mega-header-title">Vertical Menu</span></div>
-						<ul id="nav-ver" class="nav-vertical">
-							<li id="mega-ver-1" onmouseover="hoverMenuLeft(event, '#mega-ver-1', '#m-mega-ver-1')">
-								<a href="#1">Item 1</a>
-							</li>
-							<li id="mega-ver-2" onmouseover="hoverMenuLeft(event, '#mega-ver-2', '#m-mega-ver-2')">
-								<a href="#no-1">Mega auto</a>
-							</li>
-							<li>
-								<a href="#2">Full</a>
-							</li>
-							<li>
-								<a href="#2">Item 2</a>
-							</li>
-							<li>
-								<a href="#3">Item 3</a>
-							</li>
-							<li id="mega-ver-3">
-								<a href="#4">Item 4</a>
-							</li>
-						</ul>
-					</div><!-- /.menu-vertical-wrapper -->
-
-				</div>
-
-
-				<div class="mgc-3 mgc-sm-12 sticky mgo-5">
-					<div id="vertical-right" class="menu-vertical-wrapper">
-						<div class="mega-nav-header mega-header"><span class="mega-header-title">Vertical Right</span></div>
-						<ul id="nav-ver-right" class="nav-vertical">
-							<li id="mgvl-1" onmouseover="hoverMenuRight(event, '#m-mgvl-1')">
-								<a href="#1">Item 1</a>
-							</li>
-							<li id="mgvl-2" onmouseover="hoverMenuRight(event, '#m-mgvl-1')">
-								<a href="#no-1">Mega auto</a>
-							</li>
-							<li id="mgvl-3">
-								<a href="#2">Full</a>
-							</li>
-							<li id="mgvl-4">
-								<a href="#2">Item 2</a>
-							</li>
-							<li id="mgvl-5">
-								<a href="#3">Item 3</a>
-							</li>
-							<li id="mgvl-6">
-								<a href="#4">Item 4</a>
-							</li>
-						</ul>
-					</div><!-- /.menu-vertical-wrapper -->
-
-				</div>
-
-			</div>
-
-		</div><!-- ./container-fluid -->
-
-
-
-		<!-- ### VERTICAL LEFT ### -->
-		<div class="mega-wrapper" id="m-mega-ver-1" data-align="left" data-inner-align="auto" data-width="fit" data-animation="fade" data-m-animation="slide-up">
-			<div class="mega-inner" style="height: 300px; max-width: 700px; display:  block;">
-				<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod enim a iaculis molestie. Cras nulla velit, malesuada nec scelerisque sit amet, laoreet id purus. Nunc rutrum, odio sit amet luctus posuere, ex nisi interdum justo, eget rhoncus neque erat non nisi. Curabitur vitae porttitor neque. Fusce ultricies lectus quis tempus rhoncus. Nullam bibendum mattis est, ut vehicula nunc ultrices quis. Phasellus sed mollis est. Donec sed fringilla dui, consequat feugiat lorem</div>
-			</div>
-		</div>
-
-		<div class="mega-wrapper" id="m-mega-ver-2" data-align="left" data-width="200px" data-animation="up" data-m-animation="slide-up">
-			<div class="mega-inner">
-				<ul class="test">
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-				</ul>
-			</div>
-		</div>
-
-		<div class="mega-wrapper" id="m-mega-ver-3" data-align="left" data-width="200px" data-animation="up" data-m-animation="slide-up">
-
-			<div class="mega-inner">
-				<ul class="test">
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-					<li>Item 1</li>
-				</ul>
-			</div>
-		</div>
-
-		<!-- ### END VERTICAL LEFT ### -->
-
-
-		<!-- ### VERTICAL RIGHT ### -->
-		<div class="mega-wrapper" id="m-mgvl-1" data-align="right" data-inner-align="auto" data-width="fit" data-animation="fade" data-m-animation="slide-up">
-			<div class="mega-inner" style="height: 300px; max-width: 700px; display:  block;">
-				<div>Right Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod enim a iaculis molestie. Cras nulla velit, malesuada nec scelerisque sit amet, laoreet id purus. Nunc rutrum, odio sit amet luctus posuere, ex nisi interdum justo, eget rhoncus neque erat non nisi. Curabitur vitae porttitor neque. Fusce ultricies lectus quis tempus rhoncus. Nullam bibendum mattis est, ut vehicula nunc ultrices quis. Phasellus sed mollis est. Donec sed fringilla dui, consequat feugiat lorem</div>
-			</div>
-		</div>
-
-		<!-- ### END VERTICAL RIGHT ### -->
-
-
-
-
-
-
-
-		<section class="section-footer">
-			<div class="container-fluid">
-				<div class="mgr">
-					<div class="mgc-4 mgc-sm-12">
-						<h2 class="ph-heading"></h2>
-						<p class="ph-p x3"></p>
-					</div>
-					<div class="mgc-4  mgc-sm-12">
-						<h2 class="ph-heading"></h2>
-						<p class="ph-p x3"></p>
-					</div>
-					<div class="mgc-4  mgc-sm-12">
-						<h2 class="ph-heading"></h2>
-						<p class="ph-p x3"></p>
-					</div>
-				</div>
-			</div>
-		</section><!-- /.section-footer -->
-
-
-
-
-
-	</div><!-- /#page -->
-
-
-	<script src="jquery.js"></script>
-	<script src="./src/mega.js"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function ($) {
-			$("#nav-menu-primary").MegaJs({
-				// wrapper: $( '.container-fluid.header-inner' ),
-			});
-			$("#vertical-left").MegaJs({
-				vertical: true,
-				wrapper: $('.main-content'),
-			});
-			$("#vertical-right").MegaJs({
-				vertical: true,
-				wrapper: $('.main-content'),
-			});
-		});
-
-		// mouseover mega-ver-1
-		function hoverMenuLeft(event, idElm, elmContent) {
-			let megaVer1 = document.querySelector(idElm);
-			let contentMegaVer1 = document.querySelector(elmContent);
-			let widthElm = event.currentTarget.offsetWidth;
-			let positionLeft = event.currentTarget.getBoundingClientRect().left; 
-			contentMegaVer1.style.left = widthElm + positionLeft + 10 + 'px';
-		}
-
-		// mouseover mega-ver-2
-		function hoverMenuRight(event, elmContent) {
-			let widthMenuLeft = document.querySelector('#mega-ver-1').offsetWidth;
-			let containerInnerBottom = document.querySelector('#container-inner-bottom').offsetWidth;
-			let contentMegaVer1 = document.querySelector(elmContent);
-			contentMegaVer1.style.maxWidth = widthMenuLeft + containerInnerBottom + 'px';
-			
-			let widthBody = document.querySelector('#container-inner-bottom');
-			let widthPage = document.querySelector('#page');
-			
-			let menuRightToLeft = widthBody.offsetWidth + widthBody.getBoundingClientRect().left;
-			let widthContent = contentMegaVer1.offsetWidth;
-			
-			contentMegaVer1.style.left = menuRightToLeft - widthContent + 'px';
-		}
-
-		
-		
-	</script>
+  
+
+<div class="bg_heart">
+</div>
+
+<div class="container">
+ 
+
+<h2 id="text1"></h2>
+
+
+  </div>
+  
+
+
+<script>
+// <![CDATA[
+var colours=new Array('#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c'); // colours of the hearts
+var minisize=10; // smallest size of hearts in pixels
+var maxisize=20; // biggest size of hearts in pixels
+var hearts=100; // maximum number of hearts on screen
+var over_or_under="over"; // set to "over" for hearts to always be on top, or "under" to allow them to float behind other objects
+
+/*****************************
+*JavaScript Love Heart Cursor*
+*  (c)2013+ mf2fm web-design *
+*   http://www.mf2fm.com/rv  *
+*  DON'T EDIT BELOW THIS BOX *
+*****************************/
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var herz=new Array();
+var herzx=new Array();
+var herzy=new Array();
+var herzs=new Array();
+var kiss=false;
+
+if (typeof('addRVLoadEvent')!='function') function addRVLoadEvent(funky) {
+  var oldonload=window.onload;
+  if (typeof(oldonload)!='function') window.onload=funky;
+  else window.onload=function() {
+    if (oldonload) oldonload();
+    funky();
+  }
+}
+
+addRVLoadEvent(mwah);
+
+function mwah() { if (document.getElementById) {
+  var i, heart;
+  for (i=0; i<hearts; i++) {
+    heart=createDiv("auto", "auto");
+    heart.style.visibility="hidden";
+	heart.style.zIndex=(over_or_under=="over")?"1001":"0";
+    heart.style.color=colours[i%colours.length];
+	heart.style.pointerEvents="none";
+    if (navigator.appName=="Microsoft Internet Explorer") heart.style.filter="alpha(opacity=75)";
+    else heart.style.opacity=0.45;
+    heart.appendChild(document.createTextNode(String.fromCharCode(9829)));
+    document.body.appendChild(heart);
+    herz[i]=heart;
+	herzy[i]=false;
+  }
+  set_scroll();
+  set_width();
+  herzle();
+}}
+
+function herzle() {
+  var c;
+  if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
+    ox=x;
+    oy=y;
+    for (c=0; c<hearts; c++) if (herzy[c]===false) {
+	  herz[c].firstChild.nodeValue=String.fromCharCode(9829);
+      herz[c].style.left=(herzx[c]=x-minisize/2)+"px";
+      herz[c].style.top=(herzy[c]=y-minisize)+"px";
+      herz[c].style.fontSize=minisize+"px";
+	  herz[c].style.fontWeight='normal';
+      herz[c].style.visibility='visible';
+      herzs[c]=minisize;
+      break;
+    }
+  }
+  for (c=0; c<hearts; c++) if (herzy[c]!==false) blow_me_a_kiss(c);
+  setTimeout("herzle()", 30);
+}
+
+document.onmousedown=pucker;
+document.onmouseup=function(){clearTimeout(kiss);};
+
+function pucker() {
+  ox=-1;
+  oy=-1;
+  kiss=setTimeout('pucker()', 100);
+}
+
+function blow_me_a_kiss(i) {
+  herzy[i]-=herzs[i]/minisize+i%2;
+  herzx[i]+=(i%5-2)/5;
+  if (herzy[i]<sdown-herzs[i] || herzx[i]<sleft-herzs[i] || herzx[i]>sleft+swide-herzs[i]) {
+    herz[i].style.visibility="hidden";
+    herzy[i]=false;
+  }
+  else if (herzs[i]>minisize+1 && Math.random()<2.5/hearts) break_my_heart(i);
+  else {
+    if (Math.random()<maxisize/herzy[i] && herzs[i]<maxisize) herz[i].style.fontSize=(++herzs[i])+"px";
+    herz[i].style.top=herzy[i]+"px";
+    herz[i].style.left=herzx[i]+"px";
+  }
+}
+
+function break_my_heart(i) {
+  var t;
+  herz[i].firstChild.nodeValue=String.fromCharCode(9676);
+  herz[i].style.fontWeight='bold';
+    herzy[i]=false;
+  for (t=herzs[i]; t<=maxisize; t++) setTimeout('herz['+i+'].style.fontSize="'+t+'px"', 60*(t-herzs[i]));
+  setTimeout('herz['+i+'].style.visibility="hidden";', 60*(t-herzs[i]));
+}
+
+document.onmousemove=mouse;
+function mouse(e) {
+  if (e) {
+    y=e.pageY;
+    x=e.pageX;
+  }
+  else {
+    set_scroll();
+    y=event.y+sdown;
+    x=event.x+sleft;
+  }
+}
+
+window.onresize=set_width;
+function set_width() {
+  var sw_min=999999;
+  var sh_min=999999;
+  if (document.documentElement && document.documentElement.clientWidth) {
+    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+  }
+  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+  }
+  if (document.body.clientWidth) {
+    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+  }
+  if (sw_min==999999 || sh_min==999999) {
+    sw_min=800;
+    sh_min=600;
+  }
+  swide=sw_min;
+  shigh=sh_min;
+}
+
+window.onscroll=set_scroll;
+function set_scroll() {
+  if (typeof(self.pageYOffset)=='number') {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+    sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+
+function createDiv(height, width) {
+  var div=document.createElement("div");
+  div.style.position="absolute";
+  div.style.height=height;
+  div.style.width=width;
+  div.style.overflow="hidden";
+  div.style.backgroundColor="transparent";
+  return (div);
+}
+// ]]>
+</script>
+<script>
+
+var love = setInterval(function(){
+  var r_num = Math.floor(Math.random() * 40) + 1;
+	var r_size = Math.floor(Math.random() * 65) + 10;
+	var r_left = Math.floor(Math.random() * 100) + 1;
+	var r_bg = Math.floor(Math.random() * 25) + 100;
+  var r_time = Math.floor(Math.random() * 5) + 5;
+  $('.bg_heart').append("<div class='heart' style='width:"+r_size+"px;height:"+r_size+"px;left:"+r_left+"%;background:rgba(255,"+(r_bg-25)+","+r_bg+",1);-webkit-animation:love "+r_time+"s ease;-moz-animation:love "+r_time+"s ease;-ms-animation:love "+r_time+"s ease;animation:love "+r_time+"s ease'></div>");
+  
+  $('.bg_heart').append("<div class='heart' style='width:"+(r_size-10)+"px;height:"+(r_size-10)+"px;left:"+(r_left+r_num)+"%;background:rgba(255,"+(r_bg-25)+","+(r_bg+25)+",1);-webkit-animation:love "+(r_time+5)+"s ease;-moz-animation:love "+(r_time+5)+"s ease;-ms-animation:love "+(r_time+5)+"s ease;animation:love "+(r_time+5)+"s ease'></div>");
+  
+  
+},500);
+
+var i = 0;
+var txt1 = "Chào chị đẹp.....!  <<               Bây giờ em muốn nói một điều đặc biệt với chị <<    Chị đọc cẩn thận nha =))...!                                                                           > Khi em nhìn thấy chị lần đầu tiên < Em đã biết chị là một điều đặc biệt với em  <<                  Mỗi ngày trôi qua < em cảm thấy thích chị nhiều hơn trước một chút....! <<                           Em không biết tại sao chị cứ luôn ở trong tâm trí của em nữa ...! << Nhưng em thích điều ấy =))                                                                                                    > Em yêu ba mẹ em nhiều nhất trên đời này....!                    << Bây giờ chị là người mà em muốn yêu như ba mẹ em vậy....!                                                             > Em thích chị rất nhiều |                  << Love you Đoàn Hải Yến ...! } ";
+var speed = 50;
+typeWriter();
+function typeWriter() {
+  if (i < txt1.length) {        
+     if(txt1.charAt(i)=='<')
+      document.getElementById("text1").innerHTML += '</br>'
+    else if(txt1.charAt(i)=='>')
+      document.getElementById("text1").innerHTML = ''
+    else if(txt1.charAt(i)=='|')
+      {
+        $(".bg_heart").css("background-image","url('data:image/jpeg;base64,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')");
+
+      }
+    else if(txt1.charAt(i)=='}') 
+    {
+            $(".bg_heart").css("background-image","url('https://scontent.fdad3-5.fna.fbcdn.net/v/t1.18169-9/20729662_1172922032839735_8159025397078682505_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=19026a&_nc_ohc=3ha2_HRd5bIAX-fFdfy&_nc_ht=scontent.fdad3-5.fna&oh=00_AfADR58PCqMukoacY1jlqYAXktrxD1pXjJ3782mpn2TA0A&oe=64EFC5D7')");
+      $(".bg_heart").css("background-size","inherit")
+      $(".bg_heart").css("background-repeat","repeat")
+    }
+    else
+      document.getElementById("text1").innerHTML += txt1.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
 </body>
-
 </html>
